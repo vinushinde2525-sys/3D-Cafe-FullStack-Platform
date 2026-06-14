@@ -1,640 +1,391 @@
-# ☕ 3D Café — Premium Food Ordering Platform
-
 <div align="center">
+<!-- Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=☕%203D%20Café&fontSize=70&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Premium%20Full-Stack%20Food%20Ordering%20Platform&descAlignY=62&descSize=20" width="100%" />
+<br/>
+<!-- Row 1 — Stack -->
+Show Image
+Show Image
+Show Image
+Show Image
 
-<!-- Optional Banner -->
-
-<img src="https://via.placeholder.com/1200x350.png?text=3D+Caf%C3%A9+%7C+Premium+Food+Ordering+Platform" alt="3D Café Banner" width="100%" />
+<!-- Row 2 — Details -->
+Show Image
+Show Image
+Show Image
+Show Image
 
 <br/>
-<br/>
-
-### 🚀 Immersive Full-Stack MERN Café Experience with 3D UI, Real-Time Orders & Role-Based Dashboards
-
-<p align="center">
-A production-style modern café ordering platform built with the MERN ecosystem, featuring stunning 3D experiences, responsive UI/UX, authentication, real-time communication, and scalable architecture.
-</p>
+<!-- GitHub Stats -->
+Show Image
+Show Image
+Show Image
+Show Image
 
 <br/>
-
-<!-- Main Badges -->
-
-<img src="https://img.shields.io/badge/MERN-FullStack-green?style=for-the-badge&logo=mongodb" />
-<img src="https://img.shields.io/badge/Frontend-React%2018-blue?style=for-the-badge&logo=react" />
-<img src="https://img.shields.io/badge/Backend-Node.js-success?style=for-the-badge&logo=node.js" />
-<img src="https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge&logo=mongodb" />
-<img src="https://img.shields.io/badge/TypeScript-Enabled-3178C6?style=for-the-badge&logo=typescript" />
-<img src="https://img.shields.io/badge/3D-React%20Three%20Fiber-black?style=for-the-badge" />
-
-<br/>
-
-<!-- Repo Badges -->
-
-<img src="https://img.shields.io/github/stars/yourusername/yourrepo?style=flat-square" />
-<img src="https://img.shields.io/github/forks/yourusername/yourrepo?style=flat-square" />
-<img src="https://img.shields.io/github/last-commit/yourusername/yourrepo?style=flat-square" />
-<img src="https://img.shields.io/github/license/yourusername/yourrepo?style=flat-square" />
-
-<br/>
-<br/>
-
-[🚀 Live Demo](#) • [📖 Documentation](#) • [🐛 Report Bug](#) • [✨ Request Feature](#)
+🌐 Live Demo · 📖 Documentation · 🐛 Report Bug · ✨ Request Feature
 
 </div>
 
----
+📖 About the Project
 
-# 📖 About the Project
 
-**3D Café** is a modern **full-stack café ordering platform** engineered with scalability, performance, and user experience in mind.
+3D Café is a production-grade, full-stack food ordering platform built with the MERN stack — crafted to deliver an immersive, modern café experience through interactive 3D visuals, real-time order tracking, and role-based dashboards.
 
-The project combines:
 
-* ⚡ High-performance frontend architecture
-* 🎨 Immersive 3D interactions
-* 🔐 Secure authentication workflows
-* 📡 Real-time order communication
-* 📱 Fully responsive design
-* 🧩 Modular production-grade architecture
 
-Designed as a **portfolio-quality production application**, the frontend can operate independently in **Demo Mode**, enabling seamless deployment on platforms like **Vercel** or **Netlify** without requiring backend services.
+This project was engineered as a portfolio-ready, production-style application showcasing expertise across the full spectrum of modern web development: from 3D rendering with Three.js and real-time communication via Socket.io, to secure JWT authentication and containerised deployments with Docker.
 
-This project demonstrates advanced full-stack engineering concepts including:
+The frontend runs fully in Demo Mode — no backend required — making it instantly deployable to Vercel or Netlify for live demonstrations.
 
-* State management
-* Authentication & authorization
-* Real-time systems
-* API architecture
-* 3D web rendering
-* Modern UI/UX principles
-* DevOps & deployment workflows
-
----
-
-# ✨ Features
-
-## 👥 Customer Features
-
-* ☕ Interactive 3D café experience
-* 🍔 Browse menu categories and food items
-* 🛒 Add/remove items from cart
-* 💾 Persistent cart using local storage
-* 💳 Simulated checkout & payment flow
-* 📦 Order history tracking
-* 👤 User authentication & profile management
-* 📱 Responsive mobile-first design
-
----
-
-## 🛠️ Admin Features
-
-* 📊 Dashboard analytics overview
-* 🍽️ Menu & category management
-* 👥 User management system
-* 📦 Order monitoring dashboard
-* 🔐 Role-based access control
-
----
-
-## 👨‍🍳 Staff Features
-
-* ⚡ Real-time order updates
-* 🔄 Order status management
-* 🍳 Kitchen workflow support
-
----
-
-## ⚙️ Technical Features
-
-* 🧪 Frontend-only Demo Mode
-* 🔒 Protected routes & authentication
-* ⚡ Redux Toolkit state management
-* ✅ Form validation with Zod
-* 🎞️ Smooth animations & transitions
-* 📡 Real-time communication using Socket.io
-* 🔐 Optional Google OAuth integration
-* ☁️ Cloudinary media support
-* 💳 Stripe integration support
-* 🐳 Dockerized deployment workflow
-
----
-
-# 🌟 Key Highlights
-
-| Feature                   | Description                                                |
-| ------------------------- | ---------------------------------------------------------- |
-| 🎨 Immersive UI           | Built with modern 3D technologies for engaging experiences |
-| ⚡ Production Architecture | Scalable frontend and backend separation                   |
-| 🔐 Secure Authentication  | JWT, OAuth, protected routes & role-based authorization    |
-| 📡 Real-Time System       | Socket.io powered live order updates                       |
-| 📱 Responsive Design      | Optimized for desktop, tablet & mobile                     |
-| 🚀 Deployment Ready       | Supports Vercel, Netlify & Docker workflows                |
-| 🧠 Modern Stack           | Uses latest React ecosystem & TypeScript                   |
-
----
-
-# 🛠️ Tech Stack
-
-<div align="center">
-
-## Frontend
-
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript" />
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite" />
-<img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css" />
-<img src="https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux" />
-<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router" />
-<img src="https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer" />
-<img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock" />
-<img src="https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js" />
-<img src="https://img.shields.io/badge/React_Three_Fiber-black?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge" />
-
-<br/>
+<details>
+<summary>📸 Screenshots (click to expand)</summary>
 <br/>
 
-## Backend
+🖼️ Hero / Landing Page
+Show Image
 
-<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js" />
-<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express" />
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb" />
-<img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge" />
-<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens" />
-<img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io" />
-<img src="https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe" />
-<img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary" />
 
-<br/>
-<br/>
 
-## DevOps & Deployment
 
-<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker" />
-<img src="https://img.shields.io/badge/Docker_Compose-2496ED?style=for-the-badge&logo=docker" />
-<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel" />
-<img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify" />
+🖼️ Menu & Cart
+Show Image
 
-</div>
 
----
 
-# 🏗️ Architecture / Project Structure
 
-```bash
-cafe-project/
+🖼️ Admin Dashboard
+Show Image
+
+
+
+
+🖼️ Order Tracking
+Show Image
+
+
+
+</details>
+
+✨ Features
+
+<details open>
+<summary>👤 Customer Experience</summary>
+
+☕ Immersive interactive 3D café landing experience
+🍽️ Browse categorised menu items with rich visuals
+🛒 Add/remove items from a persistent cart (local storage)
+💳 Simulated checkout and payment flow via Stripe
+📦 Full order history tracking and status updates
+🔐 User authentication, profile management, and OAuth login
+
+
+</details>
+<details>
+<summary>🛡️ Admin Dashboard</summary>
+
+📊 Analytics overview with key business metrics
+🍕 Full menu and category management (CRUD)
+👥 User management and role assignment
+📋 Real-time order monitoring
+🔒 Role-based access control (RBAC)
+
+
+</details>
+<details>
+<summary>👨‍🍳 Staff Portal</summary>
+
+⚡ Real-time order updates via Socket.io
+🔄 Order status management (Pending → In Progress → Ready)
+🧾 Kitchen workflow support and queue management
+
+
+</details>
+<details>
+<summary>⚙️ Technical Highlights</summary>
+
+🎭 Demo Mode — fully functional frontend without a backend
+📱 Fully responsive design across all screen sizes
+🔐 Protected routes with JWT + refresh token support
+🗃️ Redux Toolkit for scalable global state management
+✅ End-to-end form validation with Zod
+🎬 Smooth animations via Framer Motion and GSAP
+🌐 Real-time bidirectional communication with Socket.io
+🔑 Optional Google OAuth 2.0 integration
+
+
+</details>
+
+🎥 Demo Credentials
+
+
+The application runs fully offline in Demo Mode — no backend or environment setup required.
+
+
+
+RoleEmailPassword👤 Customercustomer@cafe3d.comCustomer@1234🛡️ Adminadmin@cafe3d.comAdmin@1234👨‍🍳 Staffstaff@cafe3d.comStaff@1234
+
+Demo Mode includes: mock auth · mock menu/category data · simulated payments · persistent cart · order history · local storage persistence
+
+
+🛠️ Tech Stack
+
+Frontend
+
+TechnologyPurposeShow ImageUI component libraryShow ImageType-safe developmentShow ImageLightning-fast build toolShow ImageUtility-first stylingShow ImageGlobal state managementShow ImageDeclarative 3D renderingShow ImageDeclarative animationsShow ImageSchema validation
+
+Backend
+
+TechnologyPurposeShow ImageServer runtimeShow ImageREST API frameworkShow ImageNoSQL databaseShow ImageReal-time communicationShow ImageAuthentication tokensShow ImagePayment processingShow ImageImage managementShow ImageOAuth authentication
+
+DevOps & Infrastructure
+
+TechnologyPurposeShow ImageContainerisationShow ImageFrontend deploymentShow ImageFrontend deployment
+
+
+🏗️ Architecture & Project Structure
+
+bashcafe-project/
 │
-├── frontend/
+├── 📁 frontend/
 │   ├── public/
-│   │   └── images/
-│   │
+│   │   └── images/               # Static assets
 │   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── layouts/
-│   │   ├── pages/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   ├── store/
-│   │   ├── styles/
-│   │   ├── types/
-│   │   └── utils/
-│   │
-│   ├── vercel.json
-│   └── netlify.toml
+│   │   ├── api/                  # Axios instances & API clients
+│   │   ├── components/           # Reusable UI components
+│   │   ├── hooks/                # Custom React hooks
+│   │   ├── layouts/              # Page layout wrappers
+│   │   ├── pages/                # Route-level page components
+│   │   ├── routes/               # Protected & public route config
+│   │   ├── services/             # Business logic & service layer
+│   │   ├── store/                # Redux slices & store config
+│   │   ├── styles/               # Global styles
+│   │   ├── types/                # TypeScript type definitions
+│   │   └── utils/                # Helper functions
+│   ├── vercel.json               # Vercel SPA config
+│   └── netlify.toml              # Netlify SPA config
 │
-└── backend/
+└── 📁 backend/
     └── src/
-        ├── controllers/
-        ├── models/
-        ├── routes/
-        ├── services/
-        └── socket/
-```
+        ├── controllers/          # Request handlers
+        ├── models/               # Mongoose schemas
+        ├── routes/               # API route definitions
+        ├── services/             # Business logic layer
+        └── socket/               # Socket.io event handlers
 
----
 
-# 🎥 Demo Credentials
+🚀 Getting Started
 
-<div align="center">
+Prerequisites
 
-### 🧪 The Application Works Fully Offline in Demo Mode
+Ensure the following are installed:
 
-</div>
 
-| Role        | Email                                             | Password        |
-| ----------- | ------------------------------------------------- | --------------- |
-| 👤 Customer | [customer@cafe3d.com](mailto:customer@cafe3d.com) | `Customer@1234` |
-| 🛡️ Admin   | [admin@cafe3d.com](mailto:admin@cafe3d.com)       | `Admin@1234`    |
-| 👨‍🍳 Staff | [staff@cafe3d.com](mailto:staff@cafe3d.com)       | `Staff@1234`    |
+Node.js ≥ 18.x
+npm ≥ 9.x or yarn
+MongoDB (for full-stack mode)
+Docker (optional, for containerised setup)
 
----
 
-## ✅ Demo Mode Includes
 
-* Authentication without backend services
-* Mock menu & category data
-* Simulated payment processing
-* Persistent cart functionality
-* Order history management
-* Local storage-based persistence
+⚙️ Installation
 
----
+⚡ Option 1 — Frontend Only (Demo Mode)
 
-# 🚀 Getting Started
+Zero configuration required. No backend needed.
 
-## 📋 Prerequisites
+bash# Clone the repository
+git clone https://github.com/YOUR_USERNAME/cafe-3d.git
+cd cafe-3d/frontend
 
-Make sure you have installed:
-
-* Node.js (v18+ recommended)
-* npm or yarn
-* MongoDB (for full-stack mode)
-* Docker (optional)
-
----
-
-# ⚙️ Installation
-
-## 🔹 Frontend Setup (Demo Mode)
-
-Run the frontend independently without backend services.
-
-```bash
-cd frontend
-
+# Install dependencies
 npm install
 
+# Start the development server
 npm run dev
-```
 
-### Frontend URL
+🌐 Open http://localhost:5173 in your browser.
 
-```bash
-http://localhost:5173
-```
 
----
+🗄️ Option 2 — Full Stack Setup
 
-## 🔹 Full Stack Setup
+Step 1 — Configure backend environment
 
-### 1️⃣ Configure Backend Environment
+bashcp backend/.env.example backend/.env
 
-```bash
-cp backend/.env.example backend/.env
-```
+Update backend/.env with your credentials:
 
-Add your:
-
-* MongoDB URI
-* JWT Secret
-* Cloudinary Credentials
-* Stripe Keys
-* SMTP Credentials
-
----
-
-### 2️⃣ Start Backend Server
-
-```bash
-cd backend
-
-npm install
-
-npm run seed
-npm run dev
-```
-
-### Backend URL
-
-```bash
-http://localhost:5000
-```
-
----
-
-### 3️⃣ Configure Frontend Environment
-
-```bash
-cd frontend
-
-cp .env.example .env.local
-```
-
-Add:
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-Run:
-
-```bash
-npm run dev
-```
-
----
-
-# 💻 Usage
-
-## 🔐 Authentication
-
-Users can log in using:
-
-* Standard email/password authentication
-* Google OAuth integration (optional)
-
----
-
-## 🛒 Ordering Flow
-
-1. Browse menu items
-2. Add products to cart
-3. Checkout using simulated payment
-4. Track order status in real-time
-
----
-
-## 🛠️ Admin Workflow
-
-Admins can:
-
-* Manage users
-* Update menu items
-* Monitor order activities
-* View analytics dashboards
-
----
-
-# 🔌 API Endpoints
-
-<details>
-<summary><b>📦 Authentication Routes</b></summary>
-
-```http
-POST   /api/auth/register
-POST   /api/auth/login
-POST   /api/auth/logout
-GET    /api/auth/me
-```
-
-</details>
-
-<details>
-<summary><b>🍔 Menu Routes</b></summary>
-
-```http
-GET    /api/menu
-POST   /api/menu
-PUT    /api/menu/:id
-DELETE /api/menu/:id
-```
-
-</details>
-
-<details>
-<summary><b>📦 Order Routes</b></summary>
-
-```http
-GET    /api/orders
-POST   /api/orders
-PATCH  /api/orders/:id/status
-```
-
-</details>
-
----
-
-# 🐳 Docker Setup
-
-## 🔧 Development Environment
-
-```bash
-docker-compose --profile dev up --build
-```
-
----
-
-## 🚀 Production Environment
-
-```bash
-docker-compose up --build -d
-```
-
----
-
-## 📡 Services
-
-| Service       | Port    |
-| ------------- | ------- |
-| Frontend      | `5173`  |
-| Backend API   | `5000`  |
-| MongoDB       | `27017` |
-| Mongo Express | `8081`  |
-
----
-
-# ☁️ Deployment
-
-## ▲ Deploy to Vercel
-
-```bash
-cd frontend
-npm run build
-```
-
-### Configuration
-
-```text
-Build Command : npm run build
-Output Folder : dist
-```
-
-No environment variables are required for Demo Mode.
-
----
-
-## 🌐 Deploy to Netlify
-
-```bash
-cd frontend
-npm run build
-```
-
-Upload the generated `dist` folder.
-
-SPA routing is automatically handled through `netlify.toml`.
-
----
-
-# 🔐 Optional Integrations
-
-<details>
-<summary><b>🔑 Google OAuth</b></summary>
-
-```env
-GOOGLE_CLIENT_ID=your_client_id
-GOOGLE_CLIENT_SECRET=your_client_secret
-```
-
-Redirect URI:
-
-```text
-http://localhost:5000/api/auth/google/callback
-```
-
-</details>
-
----
-
-<details>
-<summary><b>☁️ Cloudinary</b></summary>
-
-```env
+envMONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-```
+STRIPE_SECRET_KEY=your_stripe_secret
+STRIPE_WEBHOOK_SECRET=your_webhook_secret
+SMTP_HOST=your_smtp_host
+SMTP_USER=your_smtp_user
+SMTP_PASS=your_smtp_password
 
-</details>
+Step 2 — Start the backend
 
----
+bashcd backend
+npm install
+npm run seed    # Seed initial data
+npm run dev     # Start dev server
+
+Backend available at: http://localhost:5000
+
+Step 3 — Start the frontend
+
+bashcd frontend
+cp .env.example .env.local
+
+Configure the API URL:
+
+envVITE_API_URL=http://localhost:5000/api
+
+bashnpm install
+npm run dev
+
+Frontend available at: http://localhost:5173
+
+
+🐳 Option 3 — Docker
+
+Development
+
+bashdocker-compose --profile dev up --build
+
+Production
+
+bashdocker-compose up --build -d
+
+Service Ports
+
+ServicePortFrontend5173Backend API5000MongoDB27017Mongo Express8081
+
+
+💻 Usage
+
+RoleAccess URLCapabilityCustomer/ → LoginBrowse menu, manage cart, checkout, view ordersAdmin/admin/dashboardFull platform management — menu, users, ordersStaff/staff/ordersView & update order statuses in real time
+
+
+🔌 Optional Integrations
 
 <details>
-<summary><b>💳 Stripe</b></summary>
+<summary>🔑 Google OAuth</summary>
+envGOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_client_secret
 
-```env
-STRIPE_SECRET_KEY=your_secret_key
+Redirect URI: http://localhost:5000/api/auth/google/callback
+
+</details>
+<details>
+<summary>🖼️ Cloudinary (Image Uploads)</summary>
+envCLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+</details>
+<details>
+<summary>💳 Stripe (Payments)</summary>
+envSTRIPE_SECRET_KEY=your_secret_key
 STRIPE_WEBHOOK_SECRET=your_webhook_secret
-```
 
 </details>
 
----
+☁️ Deployment
 
-# 🔒 Security Features
+Deploy to Vercel
 
-* 🔐 Password hashing with bcrypt
-* 🛡️ JWT authentication
-* ♻️ Refresh token support
-* 🚫 Role-based authorization
-* ⚡ Express rate limiting
-* 🪖 Helmet.js security headers
-* 🧹 MongoDB query sanitization
-* 🌐 Secure CORS configuration
-* 🔒 Protected API routes
+bashcd frontend
+npm run build
 
----
+SettingValueBuild Commandnpm run buildOutput DirectorydistEnvironment VariablesNone required (Demo Mode)
 
-# 📸 Screenshots / Preview
+Deploy to Netlify
 
-<div align="center">
+bashcd frontend
+npm run build
 
-| Homepage                                                           | Dashboard                                                         |
-| ------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| ![](https://via.placeholder.com/600x350.png?text=Homepage+Preview) | ![](https://via.placeholder.com/600x350.png?text=Admin+Dashboard) |
+Upload the generated dist/ folder. SPA routing is pre-configured via netlify.toml.
 
-| 3D Experience                                                        | Mobile Responsive                                           |
-| -------------------------------------------------------------------- | ----------------------------------------------------------- |
-| ![](https://via.placeholder.com/600x350.png?text=3D+Cafe+Experience) | ![](https://via.placeholder.com/600x350.png?text=Mobile+UI) |
 
-</div>
+🔒 Security
 
----
+FeatureImplementationPassword hashingbcryptAuthenticationJWT + Refresh TokensAuthorisationRole-Based Access Control (RBAC)API protectionExpress Rate LimitingHTTP headersHelmet.jsQuery safetyMongoDB query sanitisationCORSStrict origin configuration
 
-# 🧪 Future Improvements / Roadmap
 
-* [ ] Real payment gateway integration
-* [ ] Push notifications
-* [ ] Inventory management
-* [ ] AI-powered food recommendations
-* [ ] Multi-vendor architecture
-* [ ] Progressive Web App (PWA)
-* [ ] Advanced analytics dashboard
-* [ ] Dark mode support
-* [ ] Automated testing suite
-* [ ] CI/CD pipeline integration
+🌟 Key Highlights
 
----
 
-# 🤝 Contributing
+🎨 Production-quality codebase — clean architecture, strict TypeScript throughout
+🧩 Modular & scalable — feature-based folder structure, Redux slices, service layer separation
+🎮 3D-powered UI — immersive experience built with React Three Fiber and Drei
+🔄 Real-time everywhere — Socket.io powers live order status updates for customers and staff
+🧪 Demo Mode — zero-config frontend demonstration with full feature fidelity
+🔐 Enterprise-grade auth — JWT refresh tokens, Google OAuth, bcrypt hashing, RBAC
+📦 DevOps ready — fully containerised with Docker Compose for dev and production
 
-Contributions are welcome and highly appreciated.
 
-## 📌 Steps to Contribute
 
-1. Fork the repository
-2. Create a new branch
+🗺️ Roadmap
 
-```bash
-git checkout -b feature/amazing-feature
-```
 
-3. Commit your changes
+ 💳 Live Stripe payment integration (production mode)
+ 🔔 Push notifications (web + mobile)
+ 📦 Inventory management system
+ 🤖 AI-powered food recommendation engine
+ 🏪 Multi-vendor / multi-branch support
+ 📱 Progressive Web App (PWA)
+ 📊 Advanced analytics dashboard with data visualisation
+ 🌍 Internationalisation (i18n) support
 
-```bash
-git commit -m "Add amazing feature"
-```
 
-4. Push to your branch
 
-```bash
-git push origin feature/amazing-feature
-```
+🤝 Contributing
 
-5. Open a Pull Request
+Contributions, issues, and feature requests are welcome!
 
----
+bash# Fork the repository
+# Create your feature branch
+git checkout -b feature/AmazingFeature
 
-# 📄 License
+# Commit your changes
+git commit -m 'Add AmazingFeature'
 
-This project is licensed under the **MIT License**.
+# Push to the branch
+git push origin feature/AmazingFeature
 
-Free to use for:
+# Open a Pull Request
 
-* Educational projects
-* Portfolio showcases
-* Commercial experimentation
-* Learning & development
+Please ensure your code follows the existing TypeScript conventions and passes linting before submitting a PR.
 
----
 
-# 👨‍💻 Author
+📄 License
+
+Distributed under the MIT License. See LICENSE for full details.
+
+Free to use for educational, portfolio, and commercial projects.
+
+
+👨‍💻 Author
 
 <div align="center">
+Built with ❤️ as a portfolio-grade MERN Stack project
 
-## Developed as a Portfolio-Grade MERN Stack Application
+Demonstrating expertise in:
 
-### 🚀 Showcasing
-
-✅ Full Stack Development
-✅ Modern UI/UX Engineering
-✅ Authentication & Authorization
-✅ Real-Time Applications
-✅ 3D Web Experiences
-✅ State Management
-✅ Deployment & DevOps Practices
+Full Stack Development · State Management · Auth & Authorisation · Real-Time Applications · 3D Web Experiences · Modern UI/UX · Deployment & DevOps
 
 <br/>
-
-### 📫 Connect With Me
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github)](#)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge\&logo=linkedin)](#)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge)](#)
+Show Image
+Show Image
+Show Image
 
 </div>
-
----
 
 <div align="center">
-
-### ⭐ If you found this project helpful, consider giving it a star!
-
-<img src="https://img.shields.io/github/stars/yourusername/yourrepo?style=social" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
+⭐ Star this repository if you found it useful! ⭐
 
 </div>
-#   C a f - S p h e r e - F u l l - S t a c k - R e s t a u r a n t - O r d e r i n g - P l a t f o r m 
- 
- 
