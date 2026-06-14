@@ -635,5 +635,6 @@ Free to use for:
 <img src="https://img.shields.io/github/stars/yourusername/yourrepo?style=social" />
 
 </div>
-#   C a f - S p h e r e - F u l l - S t a c k - R e s t a u r a n t - O r d e r i n g - P l a t f o r m  
+#   C a f - S p h e r e - F u l l - S t a c k - R e s t a u r a n t - O r d e r i n g - P l a t f o r m 
+ 
  
