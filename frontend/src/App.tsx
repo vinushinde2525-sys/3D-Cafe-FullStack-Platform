@@ -53,7 +53,7 @@ const AppInner = () => {
   const { init, isInitialized } = useAuth()
   const isPageLoading = useAppSelector(s => s.ui.isPageLoading)
 
-  useEffect(() => { init() }, [])
+  useEffect(() => { init() }, [init])
 
   useEffect(() => {
     document.documentElement.classList.remove('dark')

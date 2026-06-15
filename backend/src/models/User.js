@@ -68,8 +68,6 @@ userSchema.methods.generatePasswordResetToken = function() {
   return token;
 };
 
-userSchema.index({ email: 1 });
-userSchema.index({ googleId: 1 });
 userSchema.index({ role: 1 });
 
 module.exports = mongoose.model('User', userSchema);

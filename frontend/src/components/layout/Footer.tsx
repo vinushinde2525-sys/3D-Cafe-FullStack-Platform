@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Facebook, Youtube, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const LINKS = {
   explore: [

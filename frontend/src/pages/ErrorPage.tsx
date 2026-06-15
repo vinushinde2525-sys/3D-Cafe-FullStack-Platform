@@ -1,4 +1,4 @@
-import { useRouteError, isRouteErrorResponse, Link } from 'react-router-dom';
+import { useRouteError, isRouteErrorResponse } from 'react-router-dom';
 import { MotionButton, LinkButton} from '@/components/ui/Button';
 import { Home, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';

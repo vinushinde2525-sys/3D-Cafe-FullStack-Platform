@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react'
-import { Plus, Search, Trash2, Edit2 } from 'lucide-react'
+import { useState, useEffect, useCallback } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { Plus, Search, Trash2, Edit2, Upload, Download } from 'lucide-react'
 import { foodAPI } from '@/api/services'
 import { FoodEditorModal } from '@/components/admin/FoodEditorModal'
+import { ExcelImportModal } from '@/components/admin/excel/ExcelImportModal'
+import { ExcelExportModal } from '@/components/admin/excel/ExcelExportModal'
 import { MotionButton } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { FoodGridSkeleton } from '@/components/common/Skeletons'
@@ -12,15 +15,18 @@ import toast from 'react-hot-toast'
 import type { FoodItem } from '@/types'
 
 export default function MenuManagementPage() {
+  const [searchParams] = useSearchParams()
   const [items, setItems]       = useState<FoodItem[]>([])
   const [search, setSearch]     = useState('')
-  const [category, setCategory] = useState('all')
+  const [category, setCategory] = useState(searchParams.get('category') ?? 'all')
   const [loading, setLoading]   = useState(true)
   const [editing, setEditing]   = useState<FoodItem | null | undefined>(undefined)
+  const [importOpen, setImportOpen] = useState(false)
+  const [exportOpen, setExportOpen] = useState(false)
 
   const CATS = ['all','Coffee','Tea','Burgers','Pizza','Sandwiches','Desserts','Beverages','Breakfast','Pasta','Salads']
 
-  const fetch = async () => {
+  const fetch = useCallback(async () => {
     setLoading(true)
     try {
       if (isBackendOnline()) {
@@ -41,9 +47,9 @@ export default function MenuManagementPage() {
       const { MOCK_FOOD_ITEMS } = await import('@/services/mockData')
       setItems(MOCK_FOOD_ITEMS)
     } finally { setLoading(false) }
-  }
+  }, [search, category])
 
-  useEffect(() => { fetch() }, [search, category])
+  useEffect(() => { fetch() }, [fetch])
 
   const del = async (id: string) => {
     if (!confirm('Delete this item?')) return
@@ -55,9 +61,17 @@ export default function MenuManagementPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="font-serif text-2xl text-espresso">Menu Management</h1>
-        <MotionButton onClick={() => setEditing(null)} variant="espresso" size="sm" pill leftIcon={<Plus size={14} />}>
-          Add Item
-        </MotionButton>
+        <div className="flex gap-2">
+          <MotionButton onClick={() => setImportOpen(true)} variant="cream" size="sm" pill leftIcon={<Upload size={14} />}>
+            Import
+          </MotionButton>
+          <MotionButton onClick={() => setExportOpen(true)} variant="cream" size="sm" pill leftIcon={<Download size={14} />}>
+            Export
+          </MotionButton>
+          <MotionButton onClick={() => setEditing(null)} variant="espresso" size="sm" pill leftIcon={<Plus size={14} />}>
+            Add Item
+          </MotionButton>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-3">
@@ -101,6 +115,8 @@ export default function MenuManagementPage() {
       )}
 
       <FoodEditorModal isOpen={editing !== undefined} item={editing} onClose={() => setEditing(undefined)} onSave={fetch} />
+      <ExcelImportModal isOpen={importOpen} onClose={() => { setImportOpen(false); fetch(); }} type="products" />
+      <ExcelExportModal isOpen={exportOpen} onClose={() => setExportOpen(false)} type="inventory" data={items} label="Menu Items" />
     </div>
   )
 }

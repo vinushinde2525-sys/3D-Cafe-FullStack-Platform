@@ -17,7 +17,6 @@ const couponSchema = new mongoose.Schema({
   applicableItems: [{ type: mongoose.Schema.Types.ObjectId, ref: 'FoodItem' }],
 }, { timestamps: true });
 
-couponSchema.index({ code: 1 });
 couponSchema.index({ expiryDate: 1 });
 
 module.exports = mongoose.model('Coupon', couponSchema);

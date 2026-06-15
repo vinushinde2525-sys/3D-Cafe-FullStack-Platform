@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import { Download } from 'lucide-react'
 import { orderAPI } from '@/api/services'
 import { OrderStatusControls } from '@/components/staff/OrderStatusControls'
+import { ExcelExportModal } from '@/components/admin/excel/ExcelExportModal'
+import { MotionButton } from '@/components/ui/Button'
 import { formatPrice, formatDate, getOrderStatusColor, getOrderStatusLabel } from '@/utils/format'
 import { DashboardSkeleton } from '@/components/common/Skeletons'
 import type { Order } from '@/types'
@@ -13,8 +16,9 @@ export default function AdminOrdersPage() {
   const [loading, setLoading] = useState(true)
   const [page, setPage]       = useState(1)
   const [total, setTotal]     = useState(0)
+  const [exportOpen, setExportOpen] = useState(false)
 
-  const fetch = async () => {
+  const fetch = useCallback(async () => {
     setLoading(true)
     try {
       const params: any = { page, limit: 20 }
@@ -22,14 +26,17 @@ export default function AdminOrdersPage() {
       const { data } = await orderAPI.getAll(params)
       setOrders(data.data.orders ?? []); setTotal(data.data.total ?? 0)
     } finally { setLoading(false) }
-  }
+  }, [page, status])
 
-  useEffect(() => { fetch() }, [status, page])
+  useEffect(() => { fetch() }, [fetch])
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="font-serif text-2xl text-espresso">Orders <span className="font-sans text-base text-ink-3 ml-2">({total})</span></h1>
+        <MotionButton onClick={() => setExportOpen(true)} variant="cream" size="sm" pill leftIcon={<Download size={14} />}>
+          Export
+        </MotionButton>
       </div>
       <div className="flex flex-wrap gap-2">
         {STATUS_OPTS.map(s => (
@@ -74,6 +81,7 @@ export default function AdminOrdersPage() {
           {orders.length === 0 && <p className="text-center font-sans text-sm text-ink-3 py-12">No orders found.</p>}
         </div>
       )}
+      <ExcelExportModal isOpen={exportOpen} onClose={() => setExportOpen(false)} type="orders" data={orders} label="Orders" />
     </div>
   )
 }

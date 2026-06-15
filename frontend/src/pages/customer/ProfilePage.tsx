@@ -167,8 +167,10 @@ const SecurityForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-sm">
-      <Input label="Current Password" type="password" {...register('currentPassword', { required: true })} />
-      <Input label="New Password"     type="password" {...register('newPassword',     { required: true, minLength: 6 })} />
+      <Input label="Current Password" type="password" error={errors.currentPassword?.message as string}
+        {...register('currentPassword', { required: 'Current password is required' })} />
+      <Input label="New Password"     type="password" error={errors.newPassword?.message as string}
+        {...register('newPassword',     { required: 'New password is required', minLength: { value: 6, message: 'Must be at least 6 characters' } })} />
       <MotionButton type="submit" variant="espresso" size="md" pill isLoading={loading}>
         Update Password
       </MotionButton>

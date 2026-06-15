@@ -60,9 +60,9 @@ export const SteamParticles = ({ count = 40, position = [0, 0, 0], spread = 0.18
         posArr[i3 + 2] = (Math.random() - 0.5) * spread
         lifetimes[i]   = initialLifetimes[i]
       } else {
-        posArr[i3]     += vel[i3]     + Math.sin(lifetimes[i] * 3) * 0.002
-        posArr[i3 + 1] += vel[i3 + 1]
-        posArr[i3 + 2] += vel[i3 + 2]
+        posArr[i3]     += velocities[i3]     + Math.sin(lifetimes[i] * 3) * 0.002
+        posArr[i3 + 1] += velocities[i3 + 1]
+        posArr[i3 + 2] += velocities[i3 + 2]
       }
     }
 

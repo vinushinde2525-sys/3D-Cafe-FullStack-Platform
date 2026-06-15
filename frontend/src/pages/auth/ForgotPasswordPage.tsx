@@ -8,6 +8,8 @@ import toast from 'react-hot-toast'
 import { Input } from '@/components/ui/Input'
 import { MotionButton } from '@/components/ui/Button'
 import { authAPI } from '@/api/services'
+import { isBackendOnline } from '@/services/backendStatus'
+import { findDemoUserByEmail } from '@/services/mockData'
 import { forgotPasswordSchema, type ForgotPasswordFormData } from '@/utils/validators'
 
 export default function ForgotPasswordPage() {
@@ -20,6 +22,17 @@ export default function ForgotPasswordPage() {
   const onSubmit = async (data: ForgotPasswordFormData) => {
     setLoading(true)
     try {
+      if (!isBackendOnline()) {
+        // Demo mode: simulate the flow without a backend, but still validate
+        // against known demo accounts so the form behaves realistically.
+        await new Promise(r => setTimeout(r, 500))
+        if (!findDemoUserByEmail(data.email)) {
+          toast.error('No account found with that email (demo mode)')
+          return
+        }
+        setSent(true)
+        return
+      }
       await authAPI.forgotPassword(data.email)
       setSent(true)
     } catch (err: any) {

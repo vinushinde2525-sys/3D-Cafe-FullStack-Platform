@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle, Circle, Clock, ChefHat, Package, Bike, Home } from 'lucide-react'
+import { CheckCircle, Clock, ChefHat, Package, Bike, Home } from 'lucide-react'
 import { useSocket } from '@/hooks/useSocket'
 import { formatDate } from '@/utils/format'
 import type { Order, OrderStatus } from '@/types'
@@ -31,7 +31,7 @@ export const OrderTracker = ({ order, onStatusChange }: Props) => {
       if (data.orderId === order._id) onStatusChange?.(data.status as OrderStatus)
     })
     return () => { unsub() }
-  }, [order._id])
+  }, [order._id, trackOrder, onOrderStatusUpdate, onStatusChange])
 
   if (['cancelled', 'rejected'].includes(order.status)) {
     return (

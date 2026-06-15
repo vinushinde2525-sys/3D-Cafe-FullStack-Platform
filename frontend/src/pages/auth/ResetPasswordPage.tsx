@@ -49,7 +49,7 @@ export default function ResetPasswordPage() {
             type={showPw ? 'text' : 'password'}
             placeholder="At least 6 characters"
             error={errors.password?.message}
-            rightAddon={<button type="button" onClick={() => setShowPw(v => !v)} className="text-ink-3 hover:text-espresso"><Eye size={15} /></button>}
+            rightAddon={<button type="button" onClick={() => setShowPw(v => !v)} className="text-ink-3 hover:text-espresso">{showPw ? <EyeOff size={15} /> : <Eye size={15} />}</button>}
             {...register('password', { onChange: e => setPw(e.target.value) })}
           />
           <PasswordStrength password={pw} />

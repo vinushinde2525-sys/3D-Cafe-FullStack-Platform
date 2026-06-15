@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ShoppingBag, ChefHat, Bike, CheckCircle, Clock, XCircle, AlertTriangle, Wifi, WifiOff } from 'lucide-react'
+import { ShoppingBag, ChefHat, Bike, Clock, AlertTriangle, Wifi, WifiOff } from 'lucide-react'
 import { useSocket } from '@/hooks/useSocket'
 import { useAppSelector } from '@/store'
 import { formatPrice } from '@/utils/format'
@@ -108,7 +108,7 @@ export const LiveOrdersFeed = ({
     )
 
     return () => { unNew(); unUpd(); unStatus() }
-  }, [isAuthenticated])
+  }, [isAuthenticated, joinKitchen, onNewOrder, onOrderUpdated, onOrderStatusUpdate, push])
 
   // ── Auto-scroll to newest (top, since newest first) ─────────────────────────
   useEffect(() => {
@@ -192,7 +192,7 @@ export const LiveOrdersFeed = ({
               </p>
             </motion.div>
           ) : (
-            events.map((event, i) => {
+            events.map((event) => {
               const cfg = EVENT_CONFIG[event.kind]
               return (
                 <motion.div

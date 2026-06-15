@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { ShoppingCart, Heart, Star, Clock, Zap } from 'lucide-react';
+import { ShoppingCart, Heart, Clock, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '@/hooks/useCart';
 import { Badge, VegBadge, RatingBadge } from '@/components/ui/Badge';
@@ -15,7 +15,7 @@ interface Props {
   layout?: 'grid' | 'list';
 }
 
-export const MenuCard = ({ item, index = 0, layout = 'grid' }: Props) => {
+export const MenuCard = ({ item, index: _index = 0, layout = 'grid' }: Props) => {
   const { addToCart } = useCart();
   const [liked, setLiked] = useState(false);
   const [adding, setAdding] = useState(false);

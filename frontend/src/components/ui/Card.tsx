@@ -29,7 +29,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
 );
 Card.displayName = 'Card';
 
-export const MotionCard = forwardRef<HTMLDivElement, CardProps & Omit<HTMLMotionProps<'div'>, keyof CardProps>>(
+type CardMotionConflictKeys = 'onAnimationStart' | 'onAnimationEnd' | 'onDrag' | 'onDragStart' | 'onDragEnd';
+
+export const MotionCard = forwardRef<HTMLDivElement, Omit<CardProps, CardMotionConflictKeys> & Omit<HTMLMotionProps<'div'>, keyof CardProps>>(
   ({ hover = true, glow = false, variant = 'default', className, children, ...props }, ref) => (
     <motion.div
       ref={ref}

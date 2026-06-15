@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Truck, Tag, Info } from 'lucide-react'
+import { Truck, Info } from 'lucide-react'
 import { useCart } from '@/hooks/useCart'
 import { formatPrice } from '@/utils/format'
 import { CouponInput } from './CouponInput'

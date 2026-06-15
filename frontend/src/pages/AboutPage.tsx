@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Leaf, Star, Heart, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { MotionButton, LinkButton} from '@/components/ui/Button';
+import { LinkButton} from '@/components/ui/Button';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
 import { NewsletterSection } from '@/components/sections/NewsletterSection';
 

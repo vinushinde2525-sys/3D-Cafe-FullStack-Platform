@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { AlertTriangle, Package, TrendingDown } from 'lucide-react'
+import { AlertTriangle, TrendingDown } from 'lucide-react'
 
 interface Alert { ingredient: string; currentStock: number; minimumStock: number; unit: string; supplier?: { name?: string } }
 interface Props { alerts: Alert[] }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingCart, Heart, Clock, ChefHat, Leaf, Flame, Star, X, Plus, Minus } from 'lucide-react';
+import { ShoppingCart, Heart, Clock, ChefHat, Leaf, Flame, X, Plus, Minus } from 'lucide-react';
 import { Modal } from '@/components/ui/Modal';
 import { Badge, VegBadge, RatingBadge } from '@/components/ui/Badge';
 import { resolveItemImage } from '@/utils/foodImage';

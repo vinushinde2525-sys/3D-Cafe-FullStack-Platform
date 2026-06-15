@@ -69,7 +69,7 @@ import { Link, type LinkProps } from 'react-router-dom';
 type LinkButtonProps = Omit<ButtonProps, 'onClick'> & { to: string; onClick?: () => void };
 
 export const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps & Omit<LinkProps, 'className'>>(
-  ({ variant = 'espresso', size = 'md', isLoading, leftIcon, rightIcon,
+  ({ variant = 'espresso', size = 'md', isLoading: _isLoading, leftIcon, rightIcon,
      fullWidth, pill, className, children, disabled, to, ...props }, ref) => (
     <Link
       ref={ref}
@@ -96,7 +96,9 @@ export const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps & Omit<L
 LinkButton.displayName = 'LinkButton';
 
 // Motion-wrapped variant for animated buttons
-export const MotionButton = forwardRef<HTMLButtonElement, ButtonProps & Omit<HTMLMotionProps<'button'>, keyof ButtonProps>>(
+type MotionConflictKeys = 'onAnimationStart' | 'onAnimationEnd' | 'onDrag' | 'onDragStart' | 'onDragEnd';
+
+export const MotionButton = forwardRef<HTMLButtonElement, Omit<ButtonProps, MotionConflictKeys> & Omit<HTMLMotionProps<'button'>, keyof ButtonProps>>(
   ({ variant = 'espresso', size = 'md', isLoading, leftIcon, rightIcon, fullWidth, pill, className, children, disabled, ...props }, ref) => (
     <motion.button
       ref={ref}

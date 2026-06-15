@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Tag, Clock, Percent, Copy, CheckCheck, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import { MotionButton, LinkButton} from '@/components/ui/Button';
+import { LinkButton} from '@/components/ui/Button';
 import { NewsletterSection } from '@/components/sections/NewsletterSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
 

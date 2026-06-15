@@ -17,7 +17,7 @@ export const LiveOrderFeed = () => {
     const unNew = onNewOrder(d => push({ id: Date.now().toString(), orderNumber: d.orderNumber, event: 'New Order', detail: `${d.itemCount} items · ${formatPrice(d.total)}`, time: new Date(), color: 'text-amber-600' }))
     const unUpd = onOrderUpdated(d => push({ id: Date.now().toString(), orderNumber: d.orderId, event: 'Status Changed', detail: d.status.replace(/_/g, ' '), time: new Date(), color: 'text-blue-600' }))
     return () => { unNew(); unUpd() }
-  }, [])
+  }, [joinKitchen, onNewOrder, onOrderUpdated])
 
   return (
     <div className="space-y-2 max-h-72 overflow-y-auto scrollbar-none">

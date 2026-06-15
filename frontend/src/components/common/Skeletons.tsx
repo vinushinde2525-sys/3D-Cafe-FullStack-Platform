@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
 // ── Base shimmer — slow, cinematic, premium ───────────────────────────────────
-const shimmer = {
+const shimmer: Variants = {
   initial:  { backgroundPosition: '-400px 0' },
   animate:  { backgroundPosition:  '400px 0' },
-  transition: {
-    duration: 1.8,
-    ease: 'linear',
-    repeat: Infinity,
-  },
+};
+
+const shimmerTransition = {
+  duration: 1.8,
+  ease: 'linear',
+  repeat: Infinity,
 };
 
 interface SkeletonProps { className?: string; }
@@ -19,7 +21,7 @@ export const Skeleton = ({ className }: SkeletonProps) => (
     variants={shimmer}
     initial="initial"
     animate="animate"
-    transition={shimmer.transition}
+    transition={shimmerTransition}
     className={cn(
       'rounded-lg',
       'bg-[length:800px_100%]',

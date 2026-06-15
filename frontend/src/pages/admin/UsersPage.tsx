@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Search } from 'lucide-react'
 import { userManagementService } from '@/services/analytics'
 import { UserTable } from '@/components/admin/UserTable'
@@ -11,7 +11,7 @@ export default function UsersManagementPage() {
   const [role, setRole]       = useState('all')
   const [loading, setLoading] = useState(true)
 
-  const fetch = async () => {
+  const fetch = useCallback(async () => {
     setLoading(true)
     try {
       const params: any = {}
@@ -20,9 +20,9 @@ export default function UsersManagementPage() {
       const data = await userManagementService.getAll(params)
       setUsers(data.users ?? [])
     } finally { setLoading(false) }
-  }
+  }, [search, role])
 
-  useEffect(() => { fetch() }, [search, role])
+  useEffect(() => { fetch() }, [fetch])
 
   return (
     <div className="space-y-6">

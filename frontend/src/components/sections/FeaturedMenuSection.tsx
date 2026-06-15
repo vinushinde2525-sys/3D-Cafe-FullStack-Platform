@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 import { MenuCard } from '@/components/menu/MenuCard';
-import { MotionButton, LinkButton} from '@/components/ui/Button';
+import { LinkButton} from '@/components/ui/Button';
 import type { FoodItem } from '@/types';
 
 // Static seed items using extracted images
@@ -20,16 +20,13 @@ interface Props { items?: FoodItem[]; isLoading?: boolean; }
 
 export const FeaturedMenuSection = ({ items = SEED_ITEMS }: Props) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
 
   const scroll = (dir: 'left' | 'right') => {
     scrollRef.current?.scrollBy({ left: dir === 'left' ? -340 : 340, behavior: 'smooth' });
   };
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-canvas overflow-hidden">
+    <section className="relative py-24 bg-canvas overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Header */}
         <div className="flex items-end justify-between mb-12">

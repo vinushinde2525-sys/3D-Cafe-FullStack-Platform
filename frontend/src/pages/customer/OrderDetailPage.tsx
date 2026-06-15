@@ -5,7 +5,6 @@ import { ArrowLeft, ShoppingBag, RefreshCw } from 'lucide-react'
 import { orderAPI } from '@/api/services'
 import { useCart } from '@/hooks/useCart'
 import { OrderTracker } from '@/components/customer/OrderTracker'
-import { Badge } from '@/components/ui/Badge'
 import { MotionButton } from '@/components/ui/Button'
 import { OrderCardSkeleton } from '@/components/common/Skeletons'
 import { formatPrice, formatDate, getOrderStatusColor, getOrderStatusLabel } from '@/utils/format'
@@ -28,6 +27,10 @@ export default function OrderDetailPage() {
   }, [id])
 
   useEffect(() => { fetch() }, [fetch])
+
+  const handleStatusChange = useCallback((s: OrderStatus) => {
+    setOrder(o => o ? { ...o, status: s } : o)
+  }, [])
 
   const handleReorder = () => {
     if (!order) return
@@ -67,7 +70,7 @@ export default function OrderDetailPage() {
           </div>
 
           {/* Tracker */}
-          <OrderTracker order={order} onStatusChange={(s: OrderStatus) => setOrder(o => o ? { ...o, status: s } : o)} />
+          <OrderTracker order={order} onStatusChange={handleStatusChange} />
         </motion.div>
 
         {/* Items */}

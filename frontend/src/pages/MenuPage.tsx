@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Search, X, SlidersHorizontal } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
-import { CategorySlider, CATEGORIES } from '@/components/sections/CategorySlider';
+import { CategorySlider } from '@/components/sections/CategorySlider';
 import { MenuGrid } from '@/components/menu/MenuGrid';
 import { PromotionalBanner } from '@/components/sections/PromotionalBanner';
 import { NewsletterSection } from '@/components/sections/NewsletterSection';

@@ -1,6 +1,5 @@
 import { useRef, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { RoundedBox, Cylinder, Torus } from '@react-three/drei'
 import * as THREE from 'three'
 
 interface Props { mouseX?: number; mouseY?: number }

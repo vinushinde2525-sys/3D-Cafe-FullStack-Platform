@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Clock, ChefHat, CheckCircle, XCircle, AlertTriangle } from 'lucide-react'
+import { Clock, AlertTriangle } from 'lucide-react'
 import { orderAPI } from '@/api/services'
 import { MotionButton } from '@/components/ui/Button'
 import { formatPrice } from '@/utils/format'

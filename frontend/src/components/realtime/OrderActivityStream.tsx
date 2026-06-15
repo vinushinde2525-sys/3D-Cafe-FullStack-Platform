@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Clock, ChefHat, Package, Bike, CheckCircle,
@@ -56,7 +56,7 @@ export const OrderActivityStream = ({
   const [total, setTotal]       = useState(0)
   const containerRef            = useRef<HTMLDivElement>(null)
 
-  const push = (e: Omit<StreamEntry, 'id' | 'isNew'>) => {
+  const push = useCallback((e: Omit<StreamEntry, 'id' | 'isNew'>) => {
     const entry: StreamEntry = { ...e, id: `${Date.now()}-${Math.random()}`, isNew: true }
     setEntries(prev => [entry, ...prev].slice(0, maxEntries))
     setTotal(n => n + 1)
@@ -64,12 +64,12 @@ export const OrderActivityStream = ({
     setTimeout(() => {
       setEntries(prev => prev.map(x => x.id === entry.id ? { ...x, isNew: false } : x))
     }, 1500)
-  }
+  }, [maxEntries])
 
   // Track specific order if orderId provided (customer order tracking page)
   useEffect(() => {
     if (orderId) trackOrder(orderId)
-  }, [orderId])
+  }, [orderId, trackOrder])
 
   // Subscribe to status events
   useEffect(() => {
@@ -87,7 +87,7 @@ export const OrderActivityStream = ({
     })
 
     return unsub
-  }, [isAuthenticated, orderId])
+  }, [isAuthenticated, orderId, onOrderStatusUpdate, push])
 
   if (!isAuthenticated) return null
 

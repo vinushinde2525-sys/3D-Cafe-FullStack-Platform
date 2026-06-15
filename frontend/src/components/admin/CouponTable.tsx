@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Trash2, Edit2, ToggleLeft, ToggleRight } from 'lucide-react'
+import { Trash2, ToggleLeft, ToggleRight } from 'lucide-react'
 import { couponAPI } from '@/api/services'
 import { Badge } from '@/components/ui/Badge'
 import { formatDate } from '@/utils/format'

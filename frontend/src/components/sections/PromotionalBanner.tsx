@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { ArrowRight, Tag, Percent, Gift } from 'lucide-react';
-import { MotionButton, LinkButton} from '@/components/ui/Button';
+import { LinkButton} from '@/components/ui/Button';
 import { cn } from '@/utils/cn';
 
 interface BannerProps {

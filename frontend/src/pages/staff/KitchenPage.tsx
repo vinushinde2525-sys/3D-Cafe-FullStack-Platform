@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react'
-import { motion } from 'framer-motion'
 import { RefreshCw, Wifi, WifiOff } from 'lucide-react'
 import { orderAPI } from '@/api/services'
 import { inventoryService } from '@/services/analytics'
@@ -30,7 +29,9 @@ export default function KitchenPage() {
     try {
       const list = await inventoryService.getLowStock()
       setAlerts(list)
-    } catch {}
+    } catch (err) {
+      console.warn('Failed to load inventory alerts:', err)
+    }
   }, [])
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function KitchenPage() {
     const unUpd = onOrderUpdated(() => fetchOrders())
     const timer = setInterval(fetchOrders, 30000)
     return () => { unNew(); unUpd(); clearInterval(timer) }
-  }, [])
+  }, [fetchOrders, fetchAlerts, joinKitchen, onNewOrder, onOrderUpdated])
 
   if (loading) return <PageLoader />
 

@@ -5,7 +5,7 @@ import { useCart } from '@/hooks/useCart'
 import { useAuth } from '@/hooks/useAuth'
 import { CartItemRow } from '@/components/cart/CartItem'
 import { OrderSummary } from '@/components/cart/OrderSummary'
-import { MotionButton, LinkButton} from '@/components/ui/Button'
+import { LinkButton} from '@/components/ui/Button'
 import { formatPrice } from '@/utils/format'
 
 export default function CartPage() {

@@ -4,7 +4,7 @@
  * Stores session in localStorage under 'cafe_demo_session'.
  */
 import type { User } from '@/types';
-import { findDemoUser, findDemoUserByEmail, makeMockToken, DEMO_USERS } from './mockData';
+import { findDemoUser, makeMockToken } from './mockData';
 
 const SESSION_KEY = 'cafe_demo_session';
 const TOKEN_KEY   = 'cafe_demo_token';

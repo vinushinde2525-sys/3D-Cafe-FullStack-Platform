@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { CheckCircle, Clock, MapPin, ShoppingBag, ArrowRight, Home } from 'lucide-react'
-import { MotionButton, LinkButton} from '@/components/ui/Button'
+import { CheckCircle, Clock, MapPin, ShoppingBag, Home } from 'lucide-react'
+import { LinkButton} from '@/components/ui/Button'
 import { formatPrice, formatDate } from '@/utils/format'
 import type { Order } from '@/types'
 
 export default function OrderConfirmPage() {
   const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
   const [order, setOrder] = useState<Order | null>(null)
 
   useEffect(() => {

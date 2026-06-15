@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Shield, Ban, CheckCircle } from 'lucide-react'
+import { Ban, CheckCircle } from 'lucide-react'
 import { userManagementService } from '@/services/analytics'
 import { Badge } from '@/components/ui/Badge'
 import { formatDate } from '@/utils/format'

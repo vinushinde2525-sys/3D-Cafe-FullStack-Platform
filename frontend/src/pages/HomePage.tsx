@@ -1,7 +1,9 @@
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Clock, Truck } from 'lucide-react';
-import { MotionButton, LinkButton} from '@/components/ui/Button';
+import { LinkButton} from '@/components/ui/Button';
+import { HeroCanvas } from '@/components/3d/HeroCanvas';
+import { FeaturedMenuSection } from '@/components/sections/FeaturedMenuSection';
 
 const fadeUp = { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 } };
 const stagger = { animate: { transition: { staggerChildren: 0.12 } } };
@@ -85,14 +87,18 @@ export default function HomePage() {
               <div className="relative w-[480px] h-[480px]">
                 {/* Glow ring */}
                 <div className="absolute inset-12 rounded-full bg-gold/15 blur-3xl" />
-                {/* Main image */}
-                <motion.img
-                  src="/images/foodie/hero-banner.png"
-                  alt="Artisan coffee"
-                  className="relative w-full h-full object-contain drop-shadow-2xl"
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                />
+                {/* 3D Coffee Scene — graceful fallback to image if WebGL unavailable */}
+                <Suspense fallback={
+                  <motion.img
+                    src="/images/foodie/hero-banner.png"
+                    alt="Artisan coffee"
+                    className="relative w-full h-full object-contain drop-shadow-2xl"
+                    animate={{ y: [-10, 10, -10] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                }>
+                  <HeroCanvas />
+                </Suspense>
                 {/* Floating food items */}
                 <motion.img
                   src="/images/grilli/menu-1.png" alt=""
@@ -159,51 +165,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Featured Menu Preview ─────────────────────────────────────── */}
-      <section className="py-20 bg-canvas">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <motion.div
-            className="text-center mb-14"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="eyebrow">Today's picks</span>
-            <div className="divider-gold" />
-            <h2 className="font-serif text-display text-espresso mt-2">
-              Crafted with Intention
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[1,2,3,4,5,6].map((n) => (
-              <motion.div
-                key={n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: n * 0.07 }}
-                whileHover={{ y: -6, transition: { type: 'spring', stiffness: 400, damping: 20 } }}
-              >
-                <Link to="/menu" className="block card-premium overflow-hidden group">
-                  <div className="aspect-square overflow-hidden bg-canvas-2">
-                    <img
-                      src={`/images/grilli/menu-${n}.png`}
-                      alt={`Menu item ${n}`}
-                      className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <LinkButton to="/menu" variant="cream" size="lg" pill rightIcon={<ArrowRight size={16} />}>
-              View Full Menu
-            </LinkButton>
-          </div>
-        </div>
-      </section>
+      <FeaturedMenuSection />
 
       {/* ── About banner ─────────────────────────────────────────────── */}
       <section className="py-20 bg-canvas-2">

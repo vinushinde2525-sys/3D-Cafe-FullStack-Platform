@@ -7,12 +7,6 @@ interface ThemeState {
   accentColor: string;
 }
 
-const getInitialTheme = (): Theme => {
-  const stored = localStorage.getItem('cafe_theme') as Theme;
-  if (stored) return stored;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-};
-
 const initialState: ThemeState = {
   theme: 'light', // Always light for this premium brand
   accentColor: '#B89052',

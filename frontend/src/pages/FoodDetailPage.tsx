@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Plus, Minus, ShoppingCart, Clock, Star, Leaf, Flame } from 'lucide-react'
+import { ArrowLeft, Plus, Minus, ShoppingCart, Clock, Leaf, Flame, Box } from 'lucide-react'
 import { useCart } from '@/hooks/useCart'
 import { MotionButton } from '@/components/ui/Button'
-import { Badge, RatingBadge } from '@/components/ui/Badge'
+import { RatingBadge } from '@/components/ui/Badge'
+import { ProductViewer3D } from '@/components/3d/ProductViewer3D'
 import { formatPrice } from '@/utils/format'
 import { MOCK_FOOD_ITEMS } from '@/services/mockData'
 import { foodAPI } from '@/api/services'
@@ -17,6 +18,7 @@ export default function FoodDetailPage() {
   const [item, setItem] = useState<FoodItem | null>(null)
   const [qty, setQty] = useState(1)
   const [activeImg, setActiveImg] = useState(0)
+  const [show3D, setShow3D] = useState(false)
   const [added, setAdded] = useState(false)
 
   useEffect(() => {
@@ -64,15 +66,33 @@ export default function FoodDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left — images */}
           <div>
-            <motion.div
-              key={activeImg}
-              initial={{ opacity: 0.7 }}
-              animate={{ opacity: 1 }}
-              className="aspect-square rounded-3xl overflow-hidden bg-canvas-2 mb-4"
-            >
-              <img src={images[activeImg]?.url} alt={item.name} className="w-full h-full object-cover" />
-            </motion.div>
-            {images.length > 1 && (
+            {/* 3D / photo toggle */}
+            <div className="flex gap-2 mb-3">
+              <button onClick={() => setShow3D(false)} className={`px-3 py-1.5 rounded-lg font-display text-xs transition-all ${!show3D ? 'bg-espresso text-cream' : 'bg-canvas-2 text-ink-2 hover:bg-beige/40'}`}>
+                Photo
+              </button>
+              <button onClick={() => setShow3D(true)} className={`px-3 py-1.5 rounded-lg font-display text-xs flex items-center gap-1.5 transition-all ${show3D ? 'bg-espresso text-cream' : 'bg-canvas-2 text-ink-2 hover:bg-beige/40'}`}>
+                <Box size={12} /> 3D View
+              </button>
+            </div>
+
+            {show3D ? (
+              <div className="aspect-square rounded-3xl overflow-hidden bg-canvas-2 mb-4">
+                <Suspense fallback={<div className="w-full h-full flex items-center justify-center text-ink-3 font-display text-xs">Loading 3D…</div>}>
+                  <ProductViewer3D color={item.category === 'Coffee' ? '#4A2C17' : item.category === 'Desserts' ? '#C8A882' : '#7FB069'} shape={item.category === 'Pizza' || item.category === 'Burgers' ? 'disc' : 'sphere'} className="w-full h-full" />
+                </Suspense>
+              </div>
+            ) : (
+              <motion.div
+                key={activeImg}
+                initial={{ opacity: 0.7 }}
+                animate={{ opacity: 1 }}
+                className="aspect-square rounded-3xl overflow-hidden bg-canvas-2 mb-4"
+              >
+                <img src={images[activeImg]?.url} alt={item.name} className="w-full h-full object-cover" />
+              </motion.div>
+            )}
+            {!show3D && images.length > 1 && (
               <div className="flex gap-3">
                 {images.map((img, i) => (
                   <button

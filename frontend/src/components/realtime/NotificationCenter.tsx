@@ -8,8 +8,6 @@ import { useSocket } from '@/hooks/useSocket'
 import { useAppSelector } from '@/store'
 import { notify } from './notify'
 
-export { notify }
-
 export const NotificationCenter = () => {
   const { user, isAuthenticated } = useAppSelector(s => s.auth)
   const { onNewOrder, onOrderStatusUpdate, onOrderUpdated, joinKitchen } = useSocket()
@@ -30,7 +28,10 @@ export const NotificationCenter = () => {
       const unStatus = onOrderStatusUpdate(d => notify.orderStatusChange(d.orderNumber, d.status))
       return () => { unStatus() }
     }
-  }, [isAuthenticated, user?._id, user?.role])
+    // Intentionally narrowed to user?._id/user?.role (not the full `user` object)
+    // to avoid re-subscribing sockets on unrelated profile field changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated, user?._id, user?.role, joinKitchen, onNewOrder, onOrderUpdated, onOrderStatusUpdate])
 
   return null
 }

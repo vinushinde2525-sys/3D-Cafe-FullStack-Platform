@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { initAuth, loginUser, registerUser, logoutUser, clearError, forceLogout } from '@/store/slices/authSlice';
 import type { LoginCredentials, RegisterData } from '@/types';
@@ -13,6 +13,12 @@ export const useAuth = () => {
     return () => window.removeEventListener('auth:logout', handleForceLogout);
   }, [dispatch]);
 
+  const init = useCallback(() => dispatch(initAuth()), [dispatch]);
+  const login = useCallback((credentials: LoginCredentials) => dispatch(loginUser(credentials)), [dispatch]);
+  const register = useCallback((data: RegisterData) => dispatch(registerUser(data)), [dispatch]);
+  const logout = useCallback(() => dispatch(logoutUser()), [dispatch]);
+  const clearAuthError = useCallback(() => dispatch(clearError()), [dispatch]);
+
   return {
     user,
     isAuthenticated,
@@ -22,10 +28,10 @@ export const useAuth = () => {
     isAdmin: user?.role === 'admin',
     isStaff: user?.role === 'staff' || user?.role === 'admin',
     isCustomer: user?.role === 'customer',
-    init: () => dispatch(initAuth()),
-    login: (credentials: LoginCredentials) => dispatch(loginUser(credentials)),
-    register: (data: RegisterData) => dispatch(registerUser(data)),
-    logout: () => dispatch(logoutUser()),
-    clearError: () => dispatch(clearError()),
+    init,
+    login,
+    register,
+    logout,
+    clearError: clearAuthError,
   };
 };

@@ -2,7 +2,7 @@ import { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Center, Environment, ContactShadows, Html } from '@react-three/drei'
 import * as THREE from 'three'
-import { Loader2, RotateCcw, ZoomIn, ZoomOut } from 'lucide-react'
+import { Loader2, RotateCcw, ZoomIn } from 'lucide-react'
 
 // Procedural food item display (until GLTF models are uploaded)
 const FoodDisplay = ({ color = '#B89052', shape = 'sphere' }: { color?: string; shape?: string }) => {
@@ -24,7 +24,7 @@ const FoodDisplay = ({ color = '#B89052', shape = 'sphere' }: { color?: string; 
 
 interface Props { modelUrl?: string; color?: string; shape?: string; className?: string }
 
-export const ProductViewer3D = ({ modelUrl, color = '#B89052', shape = 'sphere', className }: Props) => {
+export const ProductViewer3D = ({ modelUrl: _modelUrl, color = '#B89052', shape = 'sphere', className }: Props) => {
   const [autoRotate, setAutoRotate] = useState(true)
   const controlsRef = useRef<any>(null)
 
