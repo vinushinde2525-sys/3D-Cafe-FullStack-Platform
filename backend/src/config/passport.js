@@ -26,9 +26,7 @@ if (
 
             if (user) {
               user.googleId = profile.id;
-              user.avatar =
-                user.avatar || profile.photos?.[0]?.value;
-
+              user.avatar = user.avatar || profile.photos?.[0]?.value;
               await user.save();
             } else {
               user = await User.create({
@@ -52,9 +50,7 @@ if (
 
   console.log('✅ Google OAuth enabled');
 } else {
-  console.log(
-    '⚠️ Google OAuth disabled (missing environment variables)'
-  );
+  console.log('⚠️ Google OAuth disabled (missing environment variables)');
 }
 
 module.exports = passport;
