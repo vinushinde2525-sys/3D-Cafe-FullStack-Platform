@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -21,6 +22,14 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
+
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/setupTests.ts',
+    pool: 'vmThreads',
+  },
+
   server: {
     port: 5173,
     proxy: {
@@ -28,6 +37,7 @@ export default defineConfig({
       '/socket.io': { target: 'http://localhost:5000', ws: true },
     },
   },
+
   build: {
     rollupOptions: {
       output: {
