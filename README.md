@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:B89052,100:2B1D13&height=220&section=header&text=3D%20Café&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Premium%20Full-Stack%20Food%20Ordering%20Platform%20with%203D%20Visualisation%20%26%20Enterprise%20ERP&descAlignY=60&descSize=16" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:B89052,100:1B1B1B&height=220&section=header&text=3D%20Cafe&fontSize=80&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Enterprise-Grade%20Full-Stack%20Food%20Ordering%20Platform%20with%203D%20Visualisation&descAlignY=60&descSize=16" width="100%" />
 
 <br/>
 
